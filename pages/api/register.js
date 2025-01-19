@@ -23,26 +23,33 @@ export default async function handler(req, res) {
 
     try {
         // Check if the user already exists
+        console.log("hi1");
         const userExists = await getUserByUsername(userName);
+        console.log("hi2");
         if (userExists) {
             return res.status(409).json({ message: 'User already exists' });
         }
 
         // Add new user
+        console.log("hi3");
         const result = await addNewUser(userName, age, gender, height, password, weight);
-        console.log("We are here", result.acknowledged);
+        console.log("hi4");
         if (result.acknowledged) {
+            console.log("hi5");
             const resultOfUserLike = await createNewUserLike(userName);
             if(!resultOfUserLike.acknowledged){
+                console.log("hi6");
                 result = await deleteUser(userName);
                 return res.status(500).json({ message: 'Failed to cretae user_like object' });
             }
+            console.log("hi7");
             await createUserSession(userName);
             return res.status(200).json({ message: 'User registered successfully' });
         } else {
             return res.status(500).json({ message: 'Failed to register user' });
         }
     } catch (error) {
+        console.log("hi7");
         return handleError(error, res);
     }
 }
