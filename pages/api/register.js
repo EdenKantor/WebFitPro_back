@@ -30,6 +30,7 @@ export default async function handler(req, res) {
 
         // Add new user
         const result = await addNewUser(userName, age, gender, height, password, weight);
+        console.log("We are here", result.acknowledged);
         if (result.acknowledged) {
             const resultOfUserLike = await createNewUserLike(userName);
             if(!resultOfUserLike.acknowledged){
