@@ -43,7 +43,9 @@ async function handleGETRequest(req, res) {
 }
 
 /**
- * Handles GET requests based on the 'action' query parameter.
+ * Retrieves user data based on the provided username.
+ * Gets userName from the query parameters.
+ * Returns the user data if the user exists.
  */
 async function getUserData(req, res) {
     const { userName } = req.query;
@@ -63,7 +65,9 @@ async function getUserData(req, res) {
 }
 
 /**
- * Handles PATCH requests based on the 'action' body parameter.
+ * Updates user details based on the provided information.
+ * Gets userName, age, height, and weight from the request body.
+ * Updates the user details if the user exists.
  */
 async function handlePatchRequest(req, res) {
     const { userName, age, height, weight } = req.body;
