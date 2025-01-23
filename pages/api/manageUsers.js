@@ -60,6 +60,7 @@ async function handlePATCHRequest(req, res) {
  * Handles DELETE requests to completely remove a user and their related data.
  */
 async function handleDELETERequest(req, res) {
+    const { username } = req.query;
     try {
       // Get all URLs liked by the user
       const userUrls = await getURLsByUser(username);
