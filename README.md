@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Installation and Setup
 
-## Getting Started
+This guide provides step-by-step instructions to set up the WebFitPro project, which consists of two parts:
 
-First, run the development server:
+- **Frontend**: Built with Preact (Vite)
+- **Backend**: Built with Next.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Both parts should be placed under a main folder named `webfitpro`, with the following structure:
+
+```
+webfitpro/
+├── frontend/   # Preact (Vite) project
+├── backend/    # Next.js project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Before starting, ensure that you have the following installed:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js and npm** (Check by running: `node -v` and `npm -v`)
+- **Git** (Check by running: `git --version`)
 
-## Learn More
+## 1. Clone the Repositories
 
-To learn more about Next.js, take a look at the following resources:
+Open a terminal and run the following commands to clone both repositories into the correct structure:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1.1 Clone the Frontend Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/EdenKantor/WebFitPro_front.git webfitpro/frontend
+```
 
-## Deploy on Vercel
+### 1.2 Clone the Backend Repository
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git clone https://github.com/EdenKantor/WebFitPro_back.git webfitpro/backend
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After running these commands, your project structure should look like this:
+
+```
+webfitpro/
+├── frontend/   
+├── backend/
+```
+
+## 2. Install Dependencies
+
+### 2.1 Install Frontend Dependencies
+
+Navigate to the `frontend` folder and install the required dependencies:
+
+```bash
+cd webfitpro/frontend
+npm install
+```
+
+### 2.2 Install Backend Dependencies
+
+Navigate to the `backend` folder and install the required dependencies:
+
+```bash
+cd ../backend
+npm install
+```
+
+## 3. Set Up Environment Variables for Backend
+
+The backend requires a MongoDB connection string to function properly.
+
+1. Inside the `backend` directory, create a new file named `.env.local`:
+
+   ```bash
+   touch .env.local
+   ```
+
+2. Open the file and add the following line (replace `your-mongodb-uri` with your actual MongoDB connection string):
+
+   ```bash
+   MONGODB_URI=your-mongodb-uri
+   ```
+
