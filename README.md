@@ -80,3 +80,27 @@ The backend requires a MongoDB connection string to function properly.
    MONGODB_URI=your-mongodb-uri
    ```
 
+## 4. Running the Project
+
+### 1. Start the Backend Server
+
+Navigate to the backend directory and start the server:
+
+```bash
+cd webfitpro/backend
+npm run dev
+```
+
+By default, the backend will run on [http://localhost:3000](http://localhost:3000).
+
+### 2. Start the Frontend Server
+
+Open a new terminal window, navigate to the frontend directory, and start the frontend server:
+
+```bash
+cd webfitpro/frontend
+npm run dev
+```
+
+By default, the frontend will run on [http://localhost:5173](http://localhost:5173).
+
